@@ -1,5 +1,8 @@
 import logo from '../logo.svg';
 import styled from 'styled-components'
+import imagenes from './CartWidget'
+import ItemListContainer from './ItemListContainer';
+
 function NavBar() {
     
     let Header=styled.header`
@@ -33,6 +36,11 @@ let log={
     height: '90px'
 }
 
+let logi={
+    width: '60px',
+    height: '50px'
+}
+
 let navlinks={
     transition: 'all 0.2s ease 0s'
 }
@@ -59,7 +67,11 @@ return (
                 </ul>
             </nav>
             <a style={lis} href="#"><Button >Sign Up</Button></a>
+            <img style={logi} src={imagenes.img1}/>
         </Header>
+        <body>
+        <ItemListContainer></ItemListContainer>
+        </body>
     </div>
         );
 
