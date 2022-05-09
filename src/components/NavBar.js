@@ -70,7 +70,10 @@ return (
             <img style={logi} src={imagenes.img1}/>
         </Header>
         <body>
-        <ItemListContainer></ItemListContainer>
+        <ItemListContainer
+        title="bienvenidos"
+        subtitle="a la tienda"
+        />
         </body>
     </div>
         );

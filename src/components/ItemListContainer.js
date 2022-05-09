@@ -1,27 +1,12 @@
 import * as React from 'react';
 
-const ItemListContainer = () => {
-  const greeting = 'Bienvenidos';
-
-  const [isShow, setShow] = React.useState(true);
-
-  const handleToggle = () => {
-    setShow(!isShow);
-  };
-
-  return (
+const ItemListContainer = (props) => {
+  return(
     <div>
-      <button onClick={handleToggle} type="button">
-        Toggle
-      </button>
-
-      {isShow ? <Welcome text={greeting} /> : null}
+      <h1>{props.title}</h1>
+      <h2>{props.subtitle}</h2>
     </div>
   );
-};
-
-const Welcome = ({ text }) => {
-  return <h1>{text}</h1>;
 };
 
 
