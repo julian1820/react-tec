@@ -2,6 +2,7 @@ import logo from '../logo.svg';
 import styled from 'styled-components'
 import imagenes from './CartWidget'
 import ItemListContainer from './ItemListContainer';
+import ItemCounts from './ItemCounts';
 
 function NavBar() {
     
@@ -74,7 +75,14 @@ return (
         title="bienvenidos"
         subtitle="a la tienda"
         />
+        
+        <ItemCounts 
+        limit={5}
+        />
+
+
         </body>
+    
     </div>
         );
 
