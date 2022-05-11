@@ -1,10 +1,31 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
+import produc from './Item';
+import ItemList from './ItemList'
+const ItemListContainer = () => {
+  const[items,setItems]= useState([])
 
-const ItemListContainer = (props) => {
+  useEffect(()=>{
+    setTimeout(() => {
+      
+
+    const data = new Promise((resolve,reject)=>{
+      resolve(produc)
+    });
+    data.then((data) =>{
+      setItems(data);
+    });
+    data.catch((err)=>{
+      console.log(err);
+    })
+  }, 2000);
+  },[]);
+  
+  
   return(
     <div>
-      <h1>{props.title}</h1>
-      <h2>{props.subtitle}</h2>
+     <ItemList items={items}/> 
+
     </div>
   );
 };
