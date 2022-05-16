@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import produc from '../components/ItemCont';
 
 export const Item = ({item}) => {
     const {nombre , precio, imagen}= item;
@@ -7,6 +9,7 @@ export const Item = ({item}) => {
             <img src={imagen} />
             <h5>{nombre}</h5>
             <p>{precio}</p>
+            <Link to={`/Item/${produc.id}`}>Detalles</Link>
     </div>
   );
 };

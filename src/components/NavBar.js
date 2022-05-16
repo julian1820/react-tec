@@ -1,8 +1,7 @@
 import logo from '../logo.svg';
 import styled from 'styled-components'
 import imagenes from './CartWidget'
-import ItemListContainer from './ItemListContainer';
-import ItemCounts from './ItemCounts';
+import {Link} from 'react-router-dom'
 
 function NavBar() {
     
@@ -58,31 +57,27 @@ return (
 
     <div id="navegador">
     <Header >
+            <Link to='/'>
             <a style={lis} href="#"><img src={logo} style={log} className="App-logo" alt="logo" /></a>
+            </Link>
             <Title>Electronics Arts</Title>
             <nav>
                 <ul className="nav-links" style={navlinks}>
+
+                    <Link to='/'>
                     <Li style={lis} ><a href="#">Home</a></Li>
-                    <Li style={lis}><a href="#">Store</a></Li>
-                    <Li style={lis}><a href="#">Contact</a></Li>
+                    </Link>
+                    <Link to='categoria/sonido'>
+                    <Li style={lis}><a href="#">Sonido</a></Li>
+                    </Link>
+                    <Link to='categoria/celulares'>
+                    <Li style={lis}><a href="#">Celulares</a></Li>
+                    </Link>
                 </ul>
             </nav>
             <a style={lis} href="#"><Button >Sign Up</Button></a>
             <img style={logi} src={imagenes.img1}/>
-        </Header>
-        <body>
-        <ItemListContainer
-        title="bienvenidos"
-        subtitle="a la tienda"
-        />
-        
-        <ItemCounts 
-        limit={5}
-        />
-
-
-        </body>
-    
+        </Header>    
     </div>
         );
 

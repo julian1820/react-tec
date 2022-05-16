@@ -1,25 +1,22 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import produc from './Item';
+import {Traerproductos} from './ItemCont';
 import ItemList from './ItemList'
-const ItemListContainer = () => {
+import{useParams} from 'react-router-dom'
+
+  const ItemListContainer = () => {
   const[items,setItems]= useState([])
 
-  useEffect(()=>{
-    setTimeout(() => {
-      
+  const {categoriaID} = useParams();
 
-    const data = new Promise((resolve,reject)=>{
-      resolve(produc)
-    });
-    data.then((data) =>{
-      setItems(data);
-    });
-    data.catch((err)=>{
-      console.log(err);
+    
+  useEffect(()=>{
+    Traerproductos(categoriaID)
+    .then((res)=>{
+      setItems(res);
     })
-  }, 2000);
-  },[]);
+    .catch((Error)=>console.log(Error));;
+  },[categoriaID]);
   
   
   return(
