@@ -30,18 +30,13 @@
         })
     }
 
-    const producs={
-        id: 2, 
-            nombre: 'Iphone Smartphone 8 - 64Gb Plata',
-            imagen:'https://i.ebayimg.com/images/g/LwYAAOSwc2FaGbN~/s-l1600.jpg', 
-            categoria: 'celulares', 
-            precio: 2000 }
     
-        export const Traerproduc = () =>{
+        export const Traerproduc = (find) =>{
+            
             return new Promise ((resolve,reject)=>{
-               
-                    resolve(producs);
-    
+               let buscart = produc.map((prod)=>prod.id === find)
+                    resolve(buscart);
+                    console.log(find)
             })
         }
 

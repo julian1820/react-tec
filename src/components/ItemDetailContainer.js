@@ -1,25 +1,16 @@
-import React, { useState,useEffect } from 'react'
+import React from 'react'
 import ItemDetail from './ItemDetail'
-import {Traerproduc} from './ItemCont'
 import { useParams } from 'react-router-dom'
+import produc from './ItemCont'
 export const ItemDetailContainer = () => {
-    const [product,setProduc]=useState({})
-    
 
+const {itemid} = useParams();
+const oneProduc = produc.find((e) => e.id === Number(itemid));
 
-    useEffect(()=>{
-    Traerproduc()
-    .then((res)=>{
-        setProduc(res);
-    })
-    .catch((Error)=>console.log(Error));
-
-
-},[]);
 
 return (
     <div>
-        <ItemDetail product={product} />
+        <ItemDetail product={oneProduc} />
     </div>
   )
 
