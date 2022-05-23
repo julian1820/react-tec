@@ -31,14 +31,6 @@
     }
 
     
-        export const Traerproduc = (find) =>{
-            
-            return new Promise ((resolve,reject)=>{
-               let buscart = produc.map((prod)=>prod.id === find)
-                    resolve(buscart);
-                    console.log(find)
-            })
-        }
 
 export default produc;
 
