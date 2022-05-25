@@ -1,15 +1,18 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 import { Link } from 'react-router-dom';
 import ItemCounts from './ItemCounts';
-
+import { contexto } from '../Context/CartContext';
 
 
 
 export const ItemDetail = ({product}) => {
   
-  
-  const onAdd = () => {
-    
+  const CarritoContext= useContext(contexto)
+
+
+
+  const onAdd = (unidades) => {
+    CarritoContext.agregarAlCarrito(product,unidades)
     setIsLoading(false)
 
   }
