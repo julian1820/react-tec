@@ -31,7 +31,7 @@ export const ItemDetail = ({product}) => {
             <h4>{product.precio}</h4>
                     
         {isLoading? <ItemCounts 
-        limit={5} 
+        stock={product.limit} 
         onAdd={onAdd}
         />:<Link to='/carrito'><button>carrito</button></Link>}
         

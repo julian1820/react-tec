@@ -7,7 +7,7 @@ const ItemCounts = ({stock,onAdd}) => {
 const[numero,setNumero]= useState(1);
 
 const suma = ()=>{
-    if(numero===stock.limit){}
+    if(numero===stock){}
     else{
         setNumero(numero+1)
     }
