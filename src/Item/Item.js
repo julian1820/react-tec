@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 export const Item = ({item}) => {
+
     const {nombre , precio, imagen}= item;
   return (
     <div>
