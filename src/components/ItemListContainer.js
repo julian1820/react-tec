@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import {Traerproductos} from './ItemCont';
+
 import ItemList from './ItemList'
 import{useParams} from 'react-router-dom'
-import { CardList } from './ItemCont';
+
 import {db} from '../firebase/firebase'
 import { collection, query, getDocs ,where} from "firebase/firestore";
+
 
 const ItemListContainer = () => {
 
@@ -36,12 +37,10 @@ const ItemListContainer = () => {
 
   }, [categoriaID])
   
-
-console.log(listaProductos)
   
   return(
     <div>
-     <ItemList items={listaProductos}/> 
+    <ItemList items={listaProductos}/> 
 
     </div>
   );

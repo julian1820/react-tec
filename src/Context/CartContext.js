@@ -19,6 +19,7 @@ const ItemProvider = ({children})=>{
 
         const carritoAux = carrito.filter(elemento => elemento.producto.id !== id);
         setCarrito(carritoAux)
+        
     }
 
 
@@ -44,7 +45,8 @@ const ItemProvider = ({children})=>{
 
         const limpiarCarrito = () => {
             setCarrito([]);
-        };
+            setTotalItems(0)
+        }; 
     
     
         useEffect(() => {

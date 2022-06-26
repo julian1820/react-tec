@@ -1,16 +1,31 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
-import produc from './ItemCont'
-export const ItemDetailContainer = () => {
+import {db} from '../firebase/firebase'
+import { collection, where, query, getDocs } from "firebase/firestore";
 
-const {itemid} = useParams();
-const oneProduc = produc.find((e) => e.id === Number(itemid));
+export const ItemDetailContainer = () => {
+  const [itemDeProductos, setItemDeProductos] = useState({});
+
+  const { itemid } = useParams()
+
+
+  useEffect(() => {
+    const productosCollection = collection(db, "productos");
+      const miFiltro = query(productosCollection, where("id", "==", Number(itemid)))
+      const documentos = getDocs(miFiltro)
+      documentos
+          .then(respuesta => setItemDeProductos(respuesta.docs.map(doc => doc.data())[0]))
+          .catch((error) => {
+              console.log("Error al obtener los productos");
+          })
+  }, [itemid]);
 
 
 return (
     <div>
-        <ItemDetail product={oneProduc} />
+        <ItemDetail product={itemDeProductos} />
+
     </div>
   )
 

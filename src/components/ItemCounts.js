@@ -1,5 +1,6 @@
 
 import React, {useState } from "react"; 
+import Button from '@mui/material/Button';
 
 const ItemCounts = ({stock,onAdd}) => {
     
@@ -27,14 +28,14 @@ const confirmar = () => {
 }
     
     return(
-        <section>
+        <section className="contenedorBtnCount">
         <div>
-            <h1>contador </h1>
+            <h1>Cantidad</h1>
             <p>Productos Seleccionados : {numero}</p>
-            <button onClick={suma} >Suma</button>
-            <button onClick={resta}>RESTA</button>
+            <Button variant="outlined" onClick={suma} >Suma</Button>
+            <Button variant="outlined" onClick={resta}>RESTA</Button>
         </div>
-        <button onClick={confirmar}>Compra</button>
+        <Button variant="contained" size="small" onClick={confirmar}>Compra</Button>
         </section>
     );
 
